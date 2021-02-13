@@ -15,6 +15,7 @@ const thirdparagraph = "In sunt mollit occaecat excepteurVelit occaecat id offic
 
 app.set("view engine", "ejs");
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -44,7 +45,10 @@ app.get("/compose" , function(req , res) {
 
 });
 
-
+app.post('/compose', function(req, res) {
+    var item = req.body.userInputText;
+    console.log(item);
+});
 
 app.listen("3000" , function(){
     console.log("server is running on port 3000");

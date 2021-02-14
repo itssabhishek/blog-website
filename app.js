@@ -13,6 +13,9 @@ const secondparagraph = "In sunt mollit occaecat excepteurVelit occaecat id offi
 
 const thirdparagraph = "In sunt mollit occaecat excepteurVelit occaecat id officia sunt dolor officia pariatur qui excepteur aute.Sit commodo nisi sit nostrud anim duis ex sit enim Lorem labore incididunt.Ea reprehenderit aliqua magna sunt aute ea ipsum velit.Qui culpa tempor velit sunt consectetur aliquip Lorem ut officia amet minim anim est.";
 
+
+let newBlog =[];
+
 app.set("view engine", "ejs");
 
 app.use(bodyParser.json());
@@ -46,10 +49,29 @@ app.get("/compose" , function(req , res) {
 });
 
 app.post('/compose', function(req, res) {
-    var item = req.body.userInputText;
-    console.log(item);
+
+  const fullPost = {
+    title: req.body.userInputTitle,
+    post: req.body.userInputPost
+  }
+
+    newBlog.push(fullPost);
+    console.log(newBlog);
+    res.redirect("/");
 });
+
+
+
 
 app.listen("3000" , function(){
     console.log("server is running on port 3000");
 });
+
+//var person = {
+  //firstName: "John",
+  //lastName : "Doe",
+  //id       : 5566,
+  //fullName : function() {
+    //return this.firstName + " " + this.lastName;
+ // }
+//};

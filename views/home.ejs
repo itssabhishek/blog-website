@@ -1,4 +1,12 @@
 <%- include("partials/header") -%>
+
     <h1>Home</h1>
     <p><%= firstparagraph %></p>
+
+    <% console.log(newBlog); %>
+
+   <% for(var i=0; i<newBlog.length; i++) {  %>
+        <% console.log(newBlog[i].title); %>
+   <%  }; %> 
+
 <%- include("partials/footer") -%>

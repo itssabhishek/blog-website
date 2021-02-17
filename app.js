@@ -72,12 +72,3 @@ app.post('/compose', function (req, res) {
 app.listen("3000", function () {
   console.log("server is running on port 3000");
 });
-
-//var person = {
-//firstName: "John",
-//lastName : "Doe",
-//id       : 5566,
-//fullName : function() {
-//return this.firstName + " " + this.lastName;
-// }
-//};

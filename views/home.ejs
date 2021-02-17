@@ -5,8 +5,9 @@
 
     <% console.log(newBlog); %>
 
-   <% for(var i=0; i<newBlog.length; i++) {  %>
-        <% console.log(newBlog[i].title); %>
-   <%  }; %> 
+    <% newBlog.forEach(function(blog){  %>
+         <h1><%= blog.title  %></h1>
+         <p> <%= blog.post  %></p>  
+    <% });  %>
 
 <%- include("partials/footer") -%>

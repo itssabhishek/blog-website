@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var _ = require('lodash');
 const ejs = require("ejs");
 const {title} = require("process");
 
@@ -68,6 +69,27 @@ app.post('/compose', function (req, res) {
 
 
 
+app.get("/posts/:searchedPost", function (req, res) {
+
+  var searchedPost = _.lowerCase(req.params.searchedPost);
+
+ 
+
+  newBlog.forEach(function(post) {
+
+    var storedTitle = _.lowerCase(post.title);
+
+   
+   
+    if ( storedTitle ==  searchedPost) {
+      console.log("Match Found!");
+    } else {
+      console.log("Not Found!");
+    }
+
+  });
+
+});
 
 app.listen("3000", function () {
   console.log("server is running on port 3000");

@@ -1,13 +1,13 @@
 <%- include("partials/header") -%>
 
-    <h1>Home</h1>
-    <p><%= firstparagraph %></p>
+<h1>Home</h1>
+<p><%= firstparagraph %></p>
 
-    <% console.log(newBlog); %>
+<% console.log(newBlog); %>
 
-    <% newBlog.forEach(function(blog){  %>
-         <h1><%= blog.title  %></h1>
-         <p> <%= blog.post  %></p>  
-    <% });  %>
+<% newBlog.forEach(function(blog){  %>
+<h1><%= blog.title  %></h1>
+<p><%= blog.post.substring(0,100) + "..."  %> <a href="/posts/<%= blog.title %>">Read more</a></p>
+<% });  %>
 
 <%- include("partials/footer") -%>
